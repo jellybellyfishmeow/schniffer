@@ -1,0 +1,1 @@
+nmap (10.0.0.0/24) -n -sP | grep report | awk ‘{print $5}’ >> livehosts
