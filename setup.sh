@@ -39,7 +39,7 @@ sudo apt-get install nmap
 # Install Apache2
 sudo apt-get install apache2
 /etc/init.d/apache2 start
-##TODO: set apache to run on start
+update-rc.d apache2 enable
 
 # Install PHP
 sudo apt-get install php libapache2-mod-php -y
