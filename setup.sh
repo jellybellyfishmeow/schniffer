@@ -20,9 +20,14 @@ sudo apt-get install ssh-server
 # Change password
 echo hello, please set your password
 passwd
-<new password>
+#<new password>
 
 # Set hostname to Schniffer
+/etc/hostname
+
+# Make directory for output information
+cd root
+mkdir output
 
 # Install speedtest-cli
 sudo apt-get install pip
@@ -32,7 +37,8 @@ pip install speedtest-cli
 sudo apt-get install nmap
 
 # Install Apache2
-Sudo apt-get install apache2
+sudo apt-get install apache2
+/etc/init.d/apache2 start
 ##TODO: set apache to run on start
 
 # Install PHP
@@ -41,7 +47,7 @@ sudo apt-get install php libapache2-mod-php -y
 # Install OpenVAS
 sudo apt-get install lsof
 sudo apt-get install psmisc
-Sudo apt-get install openvas
+sudo apt-get install openvas
 
 # Setup OpenVAS
 openvas-setup
@@ -50,10 +56,15 @@ openvas-setup
 #Install Bro IDS
 sudo apt-get install cmake make gcc g++ flex bison libpcap-dev libssl1.0-dev python-dev swig zlib1g-dev
 git clone --recursive git://git.bro.org/bro
-Cd bro
+cd bro
 ./configure
 make
 make install
+
+# Add new unprivileged user
+adduser --home /default default
+default
+default
 
 
 
